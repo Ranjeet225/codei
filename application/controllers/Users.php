@@ -6,9 +6,9 @@ class Users extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('user_model');
-        $this->load->helper('url');
+        $this->load->   helper('url');
         $this->load->library('form_validation');
-    }
+    }   
 
     public function index() {
         $data['users'] = $this->user_model->get_all();
