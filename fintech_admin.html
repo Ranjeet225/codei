@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexGen Finance - Admin Sub-Panel</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="fintech_admin.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo-container">
+            <div class="logo-icon">N</div>
+            <div class="logo-text">NexGen Fin</div>
+        </div>
+
+        <nav class="nav-links">
+            <a href="#" class="nav-item active">
+                <i class="fa-solid fa-border-all"></i>
+                Dashboard
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-money-bill-transfer"></i>
+                Transactions
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-wallet"></i>
+                Accounts
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-chart-line"></i>
+                Investments
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-credit-card"></i>
+                Cards
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                Invoices
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Logout
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search transactions, users, etc...">
+            </div>
+
+            <div class="header-actions">
+                <button class="icon-btn">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="badge">3</span>
+                </button>
+                <button class="icon-btn">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span class="badge">5</span>
+                </button>
+
+                <div class="user-profile">
+                    <img src="https://i.pravatar.cc/150?img=11" alt="Admin Avatar" class="avatar">
+                    <div class="user-info">
+                        <div class="name">Alex Carter</div>
+                        <div class="role">Super Admin</div>
+                    </div>
+                    <i class="fa-solid fa-chevron-down" style="color: var(--text-muted); font-size: 12px;"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Workspace -->
+        <div class="dashboard">
+            <h1 class="page-title">Overview Dashboard</h1>
+
+            <!-- KPIs Overview -->
+            <div class="overview-grid">
+                <!-- Total Balance -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Total Balance</span>
+                        <div class="card-icon icon-blue">
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+                    </div>
+                    <div class="card-amount">$128,540.00</div>
+                    <div class="card-trend trend-up">
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                        <span>+12.5% from last month</span>
+                    </div>
+                </div>
+
+                <!-- Total Income -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Total Income</span>
+                        <div class="card-icon icon-green">
+                            <i class="fa-solid fa-arrow-down-long"></i>
+                        </div>
+                    </div>
+                    <div class="card-amount">$42,390.50</div>
+                    <div class="card-trend trend-up">
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                        <span>+8.2% from last month</span>
+                    </div>
+                </div>
+
+                <!-- Total Expenses -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Total Expenses</span>
+                        <div class="card-icon icon-orange">
+                            <i class="fa-solid fa-arrow-up-long"></i>
+                        </div>
+                    </div>
+                    <div class="card-amount">$18,240.20</div>
+                    <div class="card-trend trend-down">
+                        <i class="fa-solid fa-arrow-trend-down"></i>
+                        <span>-2.4% from last month</span>
+                    </div>
+                </div>
+
+                <!-- Active Users -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Active Users</span>
+                        <div class="card-icon icon-purple">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                    </div>
+                    <div class="card-amount">14,892</div>
+                    <div class="card-trend trend-up">
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                        <span>+4.1% from last month</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Complex Grid: Chart & Secondary Info -->
+            <div class="main-grid">
+                <!-- Analytics Chart -->
+                <div class="chart-card">
+                    <div class="section-header">
+                        <h2 class="section-title">Revenue Flow</h2>
+                        <select
+                            style="background: var(--bg-color); color: var(--text-main); border: 1px solid var(--border); padding: 4px 12px; border-radius: 6px;">
+                            <option>This Year</option>
+                            <option>Last Year</option>
+                        </select>
+                    </div>
+                    <canvas id="revenueChart" height="120"></canvas>
+                </div>
+
+                <!-- Side Panel (Quick Transfer & Cards) -->
+                <div>
+                    <!-- Quick Transfer -->
+                    <div class="transactions-card" style="margin-bottom: 24px;">
+                        <h2 class="section-title">Quick Transfer</h2>
+                        <div class="quick-transfer">
+                            <div class="qt-users">
+                                <div class="qt-user add-btn">
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                                <div class="qt-user"><img src="https://i.pravatar.cc/150?img=32" alt="User"></div>
+                                <div class="qt-user"><img src="https://i.pravatar.cc/150?img=12" alt="User"></div>
+                                <div class="qt-user"><img src="https://i.pravatar.cc/150?img=43" alt="User"></div>
+                                <div class="qt-user"><img src="https://i.pravatar.cc/150?img=54" alt="User"></div>
+                            </div>
+                            <div class="qt-form">
+                                <input type="text" class="qt-input" placeholder="Amount ($)">
+                                <button class="qt-btn">Send</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Alert -->
+                    <div class="card"
+                        style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05)); border-color: rgba(239, 68, 68, 0.2);">
+                        <div class="card-header">
+                            <span class="card-title" style="color: var(--danger);"><i
+                                    class="fa-solid fa-shield-halved"></i> Security Update</span>
+                        </div>
+                        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px;">
+                            System detected 3 failed login attempts from IP 192.168.1.45 on the admin gateway.</p>
+                        <button
+                            style="background: var(--danger); color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 500;">Review
+                            Logs</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Transactions List -->
+            <div class="transactions-card" style="margin-top: 24px;">
+                <div class="section-header">
+                    <h2 class="section-title">Recent Transactions</h2>
+                    <button class="btn-ghost">View All</button>
+                </div>
+
+                <table class="tx-table">
+                    <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Customer</th>
+                            <th>Date & Time</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#TRX-849201</td>
+                            <td>
+                                <div class="tx-user">
+                                    <img src="https://i.pravatar.cc/150?img=33" alt="" class="tx-avatar">
+                                    <span>Sarah Jenkins</span>
+                                </div>
+                            </td>
+                            <td class="text-muted">Oct 24, 2026 • 10:24 AM</td>
+                            <td style="font-weight: 600;">$1,200.00</td>
+                            <td><span class="tx-status status-completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>#TRX-849195</td>
+                            <td>
+                                <div class="tx-user">
+                                    <img src="https://i.pravatar.cc/150?img=68" alt="" class="tx-avatar">
+                                    <span>Michael Chang</span>
+                                </div>
+                            </td>
+                            <td class="text-muted">Oct 24, 2026 • 09:12 AM</td>
+                            <td style="font-weight: 600;">$450.50</td>
+                            <td><span class="tx-status status-pending">Processing</span></td>
+                        </tr>
+                        <tr>
+                            <td>#TRX-849182</td>
+                            <td>
+                                <div class="tx-user">
+                                    <img src="https://i.pravatar.cc/150?img=47" alt="" class="tx-avatar">
+                                    <span>Emma Roberts</span>
+                                </div>
+                            </td>
+                            <td class="text-muted">Oct 23, 2026 • 04:45 PM</td>
+                            <td style="font-weight: 600;">$3,400.00</td>
+                            <td><span class="tx-status status-completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>#TRX-849170</td>
+                            <td>
+                                <div class="tx-user">
+                                    <div class="tx-avatar" style="background: var(--primary); color: white;">DJ</div>
+                                    <span>David Johnson</span>
+                                </div>
+                            </td>
+                            <td class="text-muted">Oct 23, 2026 • 02:30 PM</td>
+                            <td style="font-weight: 600;">$120.00</td>
+                            <td><span class="tx-status status-failed">Failed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Chart Configuration Script -->
+    <script>
+        const ctx = document.getElementById('revenueChart').getContext('2d');
+
+        // Gradient for chart line
+        const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient.addColorStop(0, 'rgba(59, 130, 246, 0.5)');
+        gradient.addColorStop(1, 'rgba(59, 130, 246, 0.0)');
+
+        const revenueChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Revenue Flow ($)',
+                    data: [12000, 19000, 15000, 25000, 22000, 30000, 28000, 35000, 32000, 42000, 38000, 45000],
+                    borderColor: '#3b82f6',
+                    backgroundColor: gradient,
+                    borderWidth: 3,
+                    pointBackgroundColor: '#1e293b',
+                    pointBorderColor: '#3b82f6',
+                    pointBorderWidth: 2,
+                    pointRadius: 4,
+                    pointHoverRadius: 6,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: '#0f172a',
+                        titleColor: '#f8fafc',
+                        bodyColor: '#94a3b8',
+                        borderColor: '#334155',
+                        borderWidth: 1,
+                        padding: 12,
+                        displayColors: false,
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false,
+                            drawBorder: false
+                        },
+                        ticks: {
+                            color: '#94a3b8'
+                        }
+                    },
+                    y: {
+                        grid: {
+                            color: 'rgba(51, 65, 85, 0.5)',
+                            drawBorder: false,
+                            borderDash: [5, 5]
+                        },
+                        ticks: {
+                            color: '#94a3b8',
+                            callback: function (value) {
+                                return '$' + value / 1000 + 'k';
+                            }
+                        }
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index',
+                },
+            }
+        });
+    </script>
+</body>
+
+</html>
